@@ -3,22 +3,29 @@
 import { Header } from '@/widgets/Header';
 import { AppShell, Burger, Container } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
+import { ReactNode } from 'react';
 
-const HomeLayout = () => {
+interface HomeLayoutProps {
+	children: ReactNode;
+}
+
+const HomeLayout = ({ children }: HomeLayoutProps) => {
 	const [opened, { toggle }] = useDisclosure();
 
+	const isLoggedIn = false;
+
 	return (
-		<AppShell padding='md' header={{ height: 120 }}>
+		<AppShell header={{ height: isLoggedIn ? 120 : 60 }}>
 			<AppShell.Header>
-				<Container size={1200} mx='auto' p='md'>
+				<Container size={1200} mx='auto' p='sm'>
 					<Burger opened={opened} onClick={toggle} hiddenFrom='sm' size='sm' />
 					<Header />
 				</Container>
 			</AppShell.Header>
 
 			<AppShell.Main>
-				<Container size={1200} p={0} mx='auto'>
-					Main
+				<Container size={1200} p='sm' mx='auto'>
+					{children}
 				</Container>
 			</AppShell.Main>
 		</AppShell>
