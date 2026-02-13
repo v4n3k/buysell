@@ -1,5 +1,7 @@
+import { SignUpPage } from '@/pages/signUp';
+
 const SignUp = () => {
-	return <div>sign up</div>;
+	return <SignUpPage />;
 };
 
 export default SignUp;
