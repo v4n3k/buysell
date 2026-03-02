@@ -66,7 +66,7 @@ export const Header = () => {
 					</Group>
 				)}
 
-				<Group>
+				<Group justify='space-between'>
 					<Anchor href='/' td='none' c='black' size='xl' fw='700'>
 						BuySell
 					</Anchor>
